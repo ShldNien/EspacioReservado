@@ -82,7 +82,17 @@ public class SetsYMapas {
 		
 		System.out.println("El TreeSet creado: "+setTree);
 		
-		Map<String> hashMap
+		Map<String, String> Maphash = new HashMap<String, String>();
+		
+		Maphash.put("11367738A","Luis");
+		Maphash.put("34367738F","Mario");
+		Maphash.put("13145553E","Marta");
+		Maphash.put("13819381C","Elena");
+		
+		System.out.println("El HashMap creado: "+Maphash);
+
+
+		
 
 		
 	}
