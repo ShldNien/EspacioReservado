@@ -1,7 +1,4 @@
-package com.daw.pruebas;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+package segundotrim;
 
 /*
  * PARTE A. 1 punto.
@@ -71,44 +68,39 @@ import java.util.Scanner;
 public class Ejercicio {
 	public static void main(String[] args) {
 		
-		Tipo tipoElectrico = new Tipo("Electrico");
-		Tipo tipoFuego = new Tipo("Fuego");
-		Tipo tipoAgua = new Tipo("Agua");
+		Tipo Electrico = new Tipo("Electrico");
+		Tipo Fuego = new Tipo("Fuego");
+		Tipo Agua = new Tipo("Agua");
+		Tipo Normal = new Tipo("Normal");
 	
-		ArrayList<Ataque> atksPikaxu = new ArrayList<Ataque>();
-		ArrayList<Ataque> atksCharmande = new ArrayList<Ataque>();
-		ArrayList<Ataque> atksSquirtle = new ArrayList<Ataque>();
-		
-
-		
-		Ataque Surf = new Ataque("Surf", "Agua", 10);
-		Ataque Ascuas = new Ataque("Ascuas", "Fuego", 10);
-		Ataque BolaTrueno = new Ataque("Bola Trueno", "Rayo", 15);
+		Ataque Surf = new Ataque("Surf", Agua.tipo, 10);
+		Ataque Ascuas = new Ataque("Ascuas", Fuego.tipo, 10);
+		Ataque BolaTrueno = new Ataque("Bola Trueno", Electrico.tipo, 15);
+		Ataque Placaje = new Ataque("Placaje", Normal.tipo, 5);
 		
 		
-		Pokemon pikaxu = new Pokemon("Pikachu", tipoElectrico, 20, 10);
-		Ataque.asignAtaque(atksPikaxu, Surf);
-		Ataque.asignAtaque(atksPikaxu, Ascuas);
-		Ataque.asignAtaque(atksPikaxu, BolaTrueno);
+		Pokemon pikaxu = new Pokemon("Pikachu", Electrico, 20, 10);
+		pikaxu.cuatroAtaques(BolaTrueno, Ascuas, Placaje, Surf);
 
 
-		Pokemon charmande = new Pokemon("Charmander", tipoFuego, 30, 8);
-		Ataque.asignAtaque(atksCharmande, Ascuas);
-		Ataque.asignAtaque(atksCharmande, Ascuas);
-		Ataque.asignAtaque(atksCharmande, BolaTrueno);
+		Pokemon charmande = new Pokemon("Charmander", Fuego, 22, 8);
+		charmande.cuatroAtaques(BolaTrueno, Ascuas, Placaje, Surf);
+
 		
-		Pokemon squirtle = new Pokemon("Squirtle", tipoAgua, 18, 9);
-		Ataque.asignAtaque(atksSquirtle, BolaTrueno);
-		Ataque.asignAtaque(atksSquirtle, Ascuas);
-		Ataque.asignAtaque(atksSquirtle, BolaTrueno);
+		Pokemon squirtle = new Pokemon("Squirtle", Agua, 18, 12);
+		squirtle.cuatroAtaques(BolaTrueno, Ascuas, Placaje, Surf);
 		
+		Combate test1 = new Combate();
+		test1.pelea(pikaxu, charmande);
+
+		/*
 		int cont = -1;
 		
 		while (cont!=0) {
 			System.out.println("Elige un Pokémon: \n");
-			System.out.println("Pikachu");
-			System.out.println("Charmander");
-			System.out.println("Squirtle");
+			System.out.println("1.Pikachu");
+			System.out.println("2.Charmander");
+			System.out.println("3.Squirtle");
 			Scanner sc = new Scanner(System.in);
 			int entradaPok = sc.nextInt();
 			switch(entradaPok) {
@@ -123,10 +115,11 @@ public class Ejercicio {
 				break;
 			default:
 				System.out.println("No has elegido ningún Pokémon");
-				
+				break;
 			}
 			System.out.println("Lucharás contra,"+charmande.nombre+" ¿Listo?");
-		}
+			
+		}*/
 
 	}
 	

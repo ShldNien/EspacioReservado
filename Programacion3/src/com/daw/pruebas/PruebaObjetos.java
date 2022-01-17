@@ -1,4 +1,4 @@
-package com.daw.pruebas;
+package segundotrim;
 
 public class PruebaObjetos {
 
